@@ -187,14 +187,14 @@ EOF
 EOF
 #    if [ "$?" = 0 ]; then
         #PLATFORM_LIBS="$PLATFORM_LIBS -ltcmalloc_minimal"
-        PLATFORM_LIBS="$PLATFORM_LIBS -lssmalloc -lzmq -lrt -libverbs -lboost_system"
+        PLATFORM_LIBS="$PLATFORM_LIBS -Wl,-Bstatic -lssmalloc -lglog -lgflags -libverbs -lmlx5 -libverbs -lnl-route-3 -lnl-3 -lboost_system -lzmq -lpgm -lsodium -lnorm -lprotokit -lbsd -Wl,-Bdynamic -lrt -lgssapi_krb5 -lkrb5 -lk5crypto"
 #        PLATFORM_LIBS="$PLATFORM_LIBS  -lzmq -lrt -libverbs"
 #    fi
 fi
 
 PLATFORM_CCFLAGS="-I/usr/local/ofed/include $PLATFORM_CCFLAGS $COMMON_FLAGS"
 PLATFORM_CXXFLAGS="-I/usr/local/ofed/include $PLATFORM_CXXFLAGS $COMMON_FLAGS"
-PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -L/usr/local/ofed/lib64 -L/usr/local/ofed/lib"
+PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -L/usr/local/ofed/lib64 -L/usr/local/ofed/lib -L. -L./SSMalloc"
 echo "CC=$CC" >> $OUTPUT
 echo "CXX=$CXX" >> $OUTPUT
 echo "PLATFORM=$PLATFORM" >> $OUTPUT
