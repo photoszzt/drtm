@@ -1,0 +1,3 @@
+[submodule "SSMalloc"]
+	path = SSMalloc
+	url = https://github.com/photoszzt/SSMalloc.git
