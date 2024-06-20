@@ -178,11 +178,13 @@ namespace  drtm {
     void rdmaTest();
 
     //RDMA address for local msgs
-    inline char *RdmaResource::GetMsgAddr(int t_id) {
+    // inline char *RdmaResource::GetMsgAddr(int t_id) {
+    inline char *GetMsgAddr(int t_id) {
       return (char *)( buffer + off + t_id * bufferEntrySize);
     }
 
-    inline char *RdmaResource::GetMsgAddr(int t_id,int b_id ){
+    // inline char *RdmaResource::GetMsgAddr(int t_id,int b_id ){
+    inline char *GetMsgAddr(int t_id,int b_id ){
       assert(b_id < MAX_BUFFER_COUNT && b_id >= 0) ;
       return (char *)(buffer + off + t_id * bufferEntrySize + b_id * bufferSize);
     }

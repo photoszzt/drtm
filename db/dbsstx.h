@@ -117,9 +117,12 @@ namespace drtm {
 
     bool release_flag = false;//flag when can free all the remote lock,so it will write back and free memory space
 
-    void DBSSTX::chain_travel(rwset_item &item);
-    void DBSSTX::hashext_travel(rwset_item &item);
-    void DBSSTX::cuckoo_travel(rwset_item &item);
+    // void DBSSTX::chain_travel(rwset_item &item);
+    // void DBSSTX::hashext_travel(rwset_item &item);
+    // void DBSSTX::cuckoo_travel(rwset_item &item);
+    void chain_travel(rwset_item &item);
+    void hashext_travel(rwset_item &item);
+    void cuckoo_travel(rwset_item &item);
 
     //void PrintAllLocks();
     //Rdma methods

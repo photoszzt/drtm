@@ -536,7 +536,8 @@ post_send (struct QP *res, int opcode,char* local_buf,size_t size,size_t remote_
   sr.wr_id = 0;
   sr.sg_list = &sge;
   sr.num_sge = 1;
-  sr.opcode = opcode;
+  // sr.opcode = opcode;
+  sr.opcode = (ibv_wr_opcode)opcode;
   sr.send_flags = IBV_SEND_SIGNALED;
   if (opcode != IBV_WR_SEND)
     {
