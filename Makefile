@@ -4,8 +4,8 @@ OPT ?= -O2 -g2 -DNDEBUG      # (A) Production use (optimized mode)
 #OPT ?= -O2 -fno-omit-frame-pointer -g2 -DNDEBUG # (C) Profiling mode: opt, but w/debugging symbols
 #-----------------------------------------------
 
-CC=gcc-4.8
-CXX=g++-4.8
+CC=gcc
+CXX=g++
 
 CHOP=$(strip $(C))
 
